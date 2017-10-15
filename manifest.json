@@ -1,0 +1,29 @@
+{
+	"manifest_version": 2,
+
+	"version": "1.0",
+	"name": "HackNY",
+	"content_scripts": [
+	  {
+	    "matches": [
+	    	"<all_urls>"
+	    ],
+	    "js": ["hackny.js"]
+	  }
+	],
+	"browser_action": {
+		"default_popup": "popup.html"
+	},
+	"permissions": [
+    	"activeTab",
+    	"storage",
+    	"https://api.clarifai.com/v2/models/*",
+    	"https://api.giphy.com/*"
+  	],
+  	"background": {
+	  "scripts": [
+	    "background.js"
+	  ],
+	  "persistent": false
+	}
+}
